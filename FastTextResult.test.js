@@ -6,7 +6,3 @@ test("Correct Predicting", () => {
     expect(Result).toMatch(/success/i)
 });
 
-test("Failed to Predict", () => {
-    const Result = FastText(123456);
-    expect(Result).toBeNull()
-});
