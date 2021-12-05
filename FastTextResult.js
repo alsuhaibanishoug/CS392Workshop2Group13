@@ -10,7 +10,7 @@ function getFastTextResults(statement) {
 
 		  if(error) {
 			console.log(error)
-			return;
+			return null;
 		  }
 		  console.log(success)
 		})
