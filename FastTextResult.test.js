@@ -7,6 +7,6 @@ test("Correct Predicting", () => {
 });
 
 test("Failed to Predict", () => {
-    const Result = FastText("12345678");
+    const Result = FastText();
     expect(Result).toBeNull()
 });
