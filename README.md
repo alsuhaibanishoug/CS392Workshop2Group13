@@ -1,3 +1,4 @@
+![Build Status](https://app.travis-ci.com/alsuhaibanishoug/CS392Workshop2Group13.svg?branch=main)
 # Text Classification System
 ## Description 
 This WorkShop is based on developing a Web-based machine learning system for a Text Classfier System that Works by Node-FastText tool.
