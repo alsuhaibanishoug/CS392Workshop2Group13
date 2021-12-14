@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Your front-end</title>
+<style> 
+
+    input[type=text], select {
+		position: relative;
+	    background-color:rgba(255, 255, 255, 1);
+	    width:530px;
+	    height:20px;
+		left: 373px;
+        top: 280px;
+	    border-top-left-radius:10px;
+	    border-top-right-radius:10px;
+	    border-bottom-left-radius:10px;
+	    border-bottom-right-radius:10px;
+	    border:1px solid rgba(56.000000461936, 95.00000193715096, 65.0000037252903, 1);
+		position: absolute;
+
+    }
+
+    button[type=submit], button[type=reset] {
+		position: relative;
+	    background-color:rgba(167.87500709295273, 167.17552542686462, 167.17552542686462, 0.6000000238418579);
+	    width:215px;
+	    height:20px;
+		left: 410px;
+	    border-top-left-radius:10px;
+	    border-top-right-radius:10px;
+	    border-bottom-left-radius:10px;
+	    border-bottom-right-radius:10px;
+	    border:1px solid rgba(167.87500709295273, 167.17552542686462, 167.17552542686462, 1);
+        cursor: pointer;
+    }
+
+    button[type=submit]:hover, button[type=reset]:hover{
+		position: relative;
+	    background-color:rgba(167.87500709295273, 167.17552542686462, 167.17552542686462, 0.8999999761581421);
+    }
+    
+	.e15_30 {      
+		position: relative;
+		color:rgba(56.000000461936, 95.00000193715096, 65.0000037252903, 1);
+        width: 321px;
+        height: 89px;
+        left: 496px;
+        top: 50px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 96px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+	}
+	
+	.e15_31{
+		position: absolute;
+		color:rgba(56.000000461936, 95.00000193715096, 65.0000037252903, 1);
+        width: 300px;
+        height: 41px;
+        left: 382px;
+        top: 240px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+	}
+
+    .e15_32 {
+		position: absolute;
+		color:rgba(56.000000461936, 95.00000193715096, 65.0000037252903, 1);
+        width: 100px;
+        height: 41px;
+        left: 382px;
+        top: 400px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+     }
+	.e15_35 {
+		position: relative;
+		color:rgba(56.000000461936, 95.00000193715096, 65.0000037252903, 1);
+        width: 283px;
+        height: 10px;
+        left: 545px;
+        top: 00px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        display: flex;
+        align-items: center;
+        text-align: center; 
+
+	}
+    .e15_36 { 
+		position: absolute;
+	    background-color:rgba(255, 255, 255, 1);
+	    width:530px;
+	    height:395px;
+		left: 382px;
+        top: 420px;
+	    border-top-left-radius:10px;
+	    border-top-right-radius:10px;
+	    border-bottom-left-radius:10px;
+	    border-bottom-right-radius:10px;
+	    border:1px solid rgba(56.000000461936, 95.00000193715096, 65.0000037252903, 1);
+    }
+
+	</style> 
+</head>
+
+<body>
+	<img src="SystemLogo.png" style= "width:100px; height:100px;" align="right">
+	<p class="e15_30">LABLE IT!</p>
+    <p class="e15_35">Text Classification System</p><br><br>
+
+<form action = "/fasttext" id = "inputForm" >
+	<label class="e15_31">Enter your text to be classified</label><br>
+	<input type="text" name="statement"> 
+</form> 
+ <br><button type="submit" form="inputForm" value="Submit">Submit</button> 
+	<button type="reset" form="inputForm" value="Clear text">Clear text</button><br>
+<br><lable class="e15_32">Lables</lable>
+    <p class="e15_36"><%= result %></p>
+</body>
+
+</html> 
