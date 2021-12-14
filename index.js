@@ -2,6 +2,7 @@ const express = require('express')
 const app = express();
 var FastText = require('node-fasttext');
 const cors = require('cors');
+var terminalresult;
 
 let config = { 
   dim: 100,
@@ -33,7 +34,7 @@ app.get('/fasttext/', function(req, res) {
 
 function getFastTextResults(statement) {
 	//predict returns an array with the input and predictions for best cateogires
-	FastText.predict(
+	terminalresult = FastText.predict(
 		"model.bin", 3,
 		[statement],
 		function (success, error) {
@@ -46,6 +47,7 @@ function getFastTextResults(statement) {
 		})
 	return "success!";
 }
+document.getElementById('e15_36').innerHTML = terminalresult;
 
 app.listen(8000, () => {
   console.log('Listening on port 8000!')
