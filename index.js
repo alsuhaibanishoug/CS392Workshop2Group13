@@ -9,6 +9,7 @@ let config = {
   output: "model"
 }
 
+app.set('view engine', 'ejs')
 FastText.train("supervised", config, function (success, error) {
 
   if(error) {
@@ -23,19 +24,17 @@ FastText.train("supervised", config, function (success, error) {
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.sendfile("index.html");
+  res.sendFile("index.ejs");
 });
 
 app.get('/fasttext/', function(req, res) {
   var statement = req.param('statement');
-    res.send(getFastTextResults(statement));
+  res.render("index", { result: getFastTextResults(statement)});
 });
 
 function getFastTextResults(statement) {
 	//predict returns an array with the input and predictions for best cateogires
-var re = null
-
-	FastText.predict(
+  FastText.predict(
 		"model.bin", 3,
 		[statement],
 		function (success, error) {
@@ -44,10 +43,11 @@ var re = null
 			console.log(error)
 			return;
 		  }
-		  re = success
+		  console.log(success)
 		})
-	return re;
+	return "success!";
 }
+
 
 app.listen(8000, () => {
   console.log('Listening on port 8000!')
