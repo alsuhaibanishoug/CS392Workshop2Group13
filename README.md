@@ -68,7 +68,7 @@ git commit -m "the name of your commit "
 ```
 git push
 ```
-- After that your travic CI page should have one created branch under Branches.
-- You can Press on the shown number of branch to see more details. 
+- After that your travic CI page should have one created branch under Branches.![](https://github.com/alsuhaibanishoug/CS392Workshop2Group13/blob/new_feature/README%20Pic/Screen%20Shot%202021-12-15%20at%204.32.11%20PM.png)
+- You can Press on the shown number of branch to see more details. ![](https://github.com/alsuhaibanishoug/CS392Workshop2Group13/blob/new_feature/README%20Pic/Screen%20Shot%202021-12-15%20at%204.40.13%20PM.png)
 - After Following all these steps you should end up with a successful Build (green). 
-- **OPTIONAL** you can add the bulid tage to your README.md Repository file by Pressing on the build state on your Travis CI page then choose Markdown option, copy the link and pasted in your README.md file. 
+- **OPTIONAL** you can add the bulid tage to your README.md Repository file by Pressing on the build state on your Travis CI page then choose Markdown option, copy the link and pasted in your README.md file. ![](https://github.com/alsuhaibanishoug/CS392Workshop2Group13/blob/new_feature/README%20Pic/Screen%20Shot%202021-12-15%20at%204.32.38%20PM.png)
