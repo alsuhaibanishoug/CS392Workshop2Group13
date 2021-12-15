@@ -39,7 +39,7 @@ There is a few steps to Integrate and run Travic CI in your project, Starting wi
 - First go to Travic CI Website [here](https://www.travis-ci.com) and Sign in with your GitHub account.
 - After you sign in and sync your account enabled the Repository your project is on.
 - Now you can open your project Repositoy on your favourite editor (VS code recommended) and create a new file named .travic.yml (you can use mine [here](https://github.com/alsuhaibanishoug/CS392Workshop2Group13/blob/main/.travis.yml)).
-- Now you have to make a test so your project can pass it. if you look at your package.json file under "scripts" you will find the default test script and if you look at it you will know it will cause your project to fail (CUZ THERE IS NO TEST!!).
+- Now you have to make a test so your project can pass it. if you look at your package.json file under "scripts" you will find the default test script and if you look at it you will know it will cause your project to fail.
 ```
 "echo \"Error: no test specified\" && exit 1"
 ```
