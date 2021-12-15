@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Your front-end</title>
+<style> 
+    
+    input[type=text], select {
+        position: relative;
+        background-color:rgba(255, 255, 255, 1);
+        width:530px;
+        height:20px;
+        top: 240px;
+        border-top-left-radius:10px;
+        border-top-right-radius:10px;
+        border-bottom-left-radius:10px;
+        border-bottom-right-radius:10px;
+        border:1px solid rgba(56.000000461936, 95.00000193715096, 65.0000037252903, 1);
+        position: absolute;
+    }
+
+    button[type=submit], button[type=reset] {
+        position: relative;
+        background-color:rgba(167.87500709295273, 167.17552542686462, 167.17552542686462, 0.6000000238418579);
+        width:215px;
+        height:20px;
+        left: 40px; 
+        top: 20px;
+        border-top-left-radius:10px;
+        border-top-right-radius:10px;
+        border-bottom-left-radius:10px;
+        border-bottom-right-radius:10px;
+        border:1px solid rgba(167.87500709295273, 167.17552542686462, 167.17552542686462, 1);
+        cursor: pointer;
+    }
+
+    button[type=submit]:hover, button[type=reset]:hover{
+        position: relative;
+        background-color:rgba(167.87500709295273, 167.17552542686462, 167.17552542686462, 0.8999999761581421);
+    }
+    
+    .e15_30 {      
+        position: relative;
+        color:rgba(56.000000461936, 95.00000193715096, 65.0000037252903, 1);
+        width: 400px;
+        height: 30px;
+        /* left: 496px; */
+        top: 50px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 96px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .e15_31{
+        position: absolute;
+        color:rgba(56.000000461936, 95.00000193715096, 65.0000037252903, 1);
+        width: 350px;
+        height: 41px;
+        /* left: 382px; */
+        top: 200px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .e15_32 {
+        position: absolute;
+        color:rgba(56.000000461936, 95.00000193715096, 65.0000037252903, 1);
+        width: 100px;
+        height: 41px;
+        /* left: 382px; */
+        top: 300px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+     }
+
+    td {
+        color:rgba(56.000000461936, 95.00000193715096, 65.0000037252903, 1);
+        font-family: Poppins;
+        font-size: 18px;
+    }
+
+    .e15_35 {
+        position: relative;
+        color:rgba(56.000000461936, 95.00000193715096, 65.0000037252903, 1);
+        width: 283px;
+        height: 20px;
+        left: 35px;
+        top: 00px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        display: flex;
+        align-items: center;
+        text-align: center; 
+    }
+
+    table { 
+        position: absolute;
+        background-color:rgba(255, 255, 255, 1);
+        width:530px;
+        height:395px;
+        top: 340px;
+        border-top-left-radius:10px;
+        border-top-right-radius:10px;
+        border-bottom-left-radius:10px;
+        border-bottom-right-radius:10px;
+        border:1px solid rgba(56.000000461936, 95.00000193715096, 65.0000037252903, 1);
+    }
+
+
+    </style> 
+</head>
+
+<body>
+  
+    <img src="https://f.top4top.io/p_21752atmb1.png" style= "width:100px; height:100px;" align="right">    
+    <p class="e15_30">LABLE IT!</p>
+    <p class="e15_35">Text Classification System</p><br><br>
+
+    <form  id = "inputForm">
+        <label class="e15_31">Enter your text to be classified</label><br>
+        <input type="text" name="statement" id="statement">
+    </form>
+   
+    <br><button id="btn" type="submit" form="inputForm" value="Submit">Submit</button> 
+    <button type="reset" form="inputForm" value="Clear text">Clear text</button><br>
+    <br><lable class="e15_32">Lables</lable>
+
+        <table id="table">
+          <thead>
+            <tr style="position:absolute; top:10px; font-weight:600">
+              <td style="width:283px; height:20px">Text</td>
+		      <td style="width:283px; height:20px">Label</td>
+              
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <template id="row">
+          <tr>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+          </tr>
+        </template>
+        <script>
+          let statementValue = document.getElementById('statement');
+          let btn = document.getElementById('btn');
+          let table = document.getElementById('table');
+      
+      
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log(statementValue.value);
+            fetch( 'http://localhost:8000/fasttext/?statement=' + statementValue.value)
+              .then(response => response.json())
+              .then(json => {
+                console.log(json)
+                let tBody = table.querySelector('tbody')
+                json.forEach(obj => {
+                  var clone = document.querySelector('#row').content.cloneNode(true);
+                  var td = clone.querySelectorAll("td");
+                  td[0].textContent = obj.text;
+                  td[1].textContent = obj.label;
+                  tBody.appendChild(clone)
+                })
+              })
+          })
+        </script>
+    
+
+</body>
+
+</html>
