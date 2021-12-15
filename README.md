@@ -58,14 +58,14 @@ After you are done with integration Travis CI now you can Run it.
 git status
 ```
 what this command dose is making you know which files has been modified and which were added
--after that run two Following commands
+- After that run two Following commands
 ```
 git add .
 ```
 ```
 git commit -m "the name of your commit "
 ```
-- then run 
+- Then run 
 ```
 git push
 ```
