@@ -19,7 +19,8 @@ npm install express --save
 ```
 npm install cors --save
 ```
-or simply by using 
+or simply by using <img width="1400" alt="image" src="https://user-images.githubusercontent.com/92891184/146198634-17028fbd-4200-4265-a886-a68152158e31.png">
+
 ```
 npm install
 ```
@@ -36,7 +37,7 @@ There is a few steps to Integrate and run Travic CI in your project, Starting wi
 ### Integrating Travis CI 
 
 - First go to Travic CI Website [here](https://www.travis-ci.com) and Sign in with your GitHub account.
-- After you sign in and sync your account enabled the Repository your project is on. <!-- photo gose here -->
+- After you sign in and sync your account enabled the Repository your project is on.
 - Now you can open your project Repositoy on your favourite editor (VS code recommended) and create a new file named .travic.yml (you can use mine [here](https://github.com/alsuhaibanishoug/CS392Workshop2Group13/blob/main/.travis.yml)).
 - Now you have to make a test so your project can pass it. if you look at your package.json file under "scripts" you will find the default test script and if you look at it you will know it will cause your project to fail (CUZ THERE IS NO TEST!!).
 ```
@@ -69,6 +70,8 @@ git commit -m "the name of your commit "
 git push
 ```
 - After that your travic CI page should have one created branch under Branches.
-- You can Press on the shown number of branch to see more details. 
+![This is an image](https://github.com/alsuhaibanishoug/CS392Workshop2Group13/blob/main/README%20Pic/Screen%20Shot%202021-12-15%20at%204.32.11%20PM.png)
+- You can Press on the shown number of branch to see more details.
+![This is an image](https://github.com/alsuhaibanishoug/CS392Workshop2Group13/blob/main/README%20Pic/Screen%20Shot%202021-12-15%20at%204.40.13%20PM.png) 
 - After Following all these steps you should end up with a successful Build (green). 
-- **OPTIONAL** you can add the bulid tage to your README.md Repository file by Pressing on the build state on your Travis CI page then choose Markdown option, copy the link and pasted in your README.md file. 
+- **OPTIONAL** you can add the bulid tage to your README.md Repository file by Pressing on the build state on your Travis CI page then choose Markdown option, copy the link and pasted in your README.md file. ![This is an image](https://github.com/alsuhaibanishoug/CS392Workshop2Group13/blob/main/README%20Pic/Screen%20Shot%202021-12-15%20at%204.32.38%20PM.png) 
