@@ -19,7 +19,7 @@ npm install express --save
 ```
 npm install cors --save
 ```
-or simply by using <img width="1400" alt="image" src="https://user-images.githubusercontent.com/92891184/146198634-17028fbd-4200-4265-a886-a68152158e31.png">
+or simply by using
 
 ```
 npm install
