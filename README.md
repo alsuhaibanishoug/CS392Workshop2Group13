@@ -27,4 +27,48 @@ you can now run the Node js Server
 ```
 node index.js
 ```
-after it's done you can open the Webpage using the given port number by the Terminal.
+after it's done you can open the Webpage using the given port number by the Terminal and use the System.
+
+## Travic CI tool
+
+Travis CI used here to test the Pushed code each time automatically.\
+There is a few steps to Integrate and run Travic CI in your project, Starting with:
+### Integrating Travis CI 
+
+- First go to Travic CI Website [here](https://www.travis-ci.com) and Sign in with your GitHub account.
+- After you sign in and sync your account enabled the Repository your project is on. <!-- photo gose here -->
+- Now you can open your project Repositoy on your favourite editor (VS code recommended) and create a new file named .travic.yml (you can use mine [here](https://github.com/alsuhaibanishoug/CS392Workshop2Group13/blob/main/.travis.yml)).
+- Now you have to make a test so your project can pass it. if you look at your package.json file under "scripts" you will find the default test script and if you look at it you will know it will cause your project to fail (CUZ THERE IS NO TEST!!).
+```
+"echo \"Error: no test specified\" && exit 1"
+```
+- You can change it to this test and your project will pass it easily (CUZ THERE IS NO TEST!!). 
+```
+"echo \"No test specified\""
+```
+- Or you can make some .js and test.js test files for your project to pass (Look at mine [here](https://github.com/alsuhaibanishoug/CS392Workshop2Group13/blob/main/FastTextResult.js) and [here](https://github.com/alsuhaibanishoug/CS392Workshop2Group13/blob/main/FastTextResult.test.js) ) after your test is done do not forget to add it in your package.json file. 
+
+
+### Running Travis CI 
+
+After you are done with integration Travis CI now you can Run it.
+- First open your Project Repository on Terminal and run the following command 
+```
+git status
+```
+what this command dose is making you know which files has been modified and which were added
+-after that run two Following commands
+```
+git add .
+```
+```
+git commit -m "the name of your commit "
+```
+- then run 
+```
+git push
+```
+- After that your travic CI page should have one created branch under Branches.
+- You can Press on the shown number of branch to see more details. 
+- After Following all these steps you should end up with a successful Build (green). 
+- **OPTIONAL** you can add the bulid tage to your README.md Repository file by Pressing on the build state on your Travis CI page then choose Markdown option, copy the link and pasted in your README.md file. 
