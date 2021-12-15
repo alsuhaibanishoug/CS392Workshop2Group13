@@ -9,6 +9,7 @@ script:
 branches:
   only:
   - main
+  - new_feature
 
 nofications:
   email: false
